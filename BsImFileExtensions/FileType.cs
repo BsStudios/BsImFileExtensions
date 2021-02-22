@@ -1,4 +1,4 @@
-﻿using PaintDotNet;
+using PaintDotNet;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -73,11 +73,11 @@ namespace BsImFileExtensions
                 {
                     if (saveConfig.bitDepth.SelectedIndex == 0)
                     {
-                        binwriter.Write(image.GetPixel(x, y).A);
+                        binwriter.Write(image.GetPixel(x, y).B);
                     }
-                    binwriter.Write(image.GetPixel(x, y).R);
                     binwriter.Write(image.GetPixel(x, y).G);
-                    binwriter.Write(image.GetPixel(x, y).B);
+                    binwriter.Write(image.GetPixel(x, y).R);
+                    binwriter.Write(image.GetPixel(x, y).A);
                 }
             }
 
