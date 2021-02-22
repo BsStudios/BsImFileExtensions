@@ -71,13 +71,13 @@ namespace BsImFileExtensions
             {
                 for (int x = 0; x < image.Width; x++)
                 {
-                    if (saveConfig.bitDepth.SelectedIndex == 0)
-                    {
-                        binwriter.Write(image.GetPixel(x, y).B);
-                    }
+                    binwriter.Write(image.GetPixel(x, y).B);
                     binwriter.Write(image.GetPixel(x, y).G);
                     binwriter.Write(image.GetPixel(x, y).R);
-                    binwriter.Write(image.GetPixel(x, y).A);
+                    if (saveConfig.bitDepth.SelectedIndex == 0)
+                    {
+                        binwriter.Write(image.GetPixel(x, y).A);
+                    }
                 }
             }
 
