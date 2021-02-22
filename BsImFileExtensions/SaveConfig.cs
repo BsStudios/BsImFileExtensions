@@ -37,6 +37,15 @@ namespace BsImFileExtensions
             {
                 intbitDepth = 24;
             }
+
+            if (intbitDepth == 32)
+            {
+                fileSize.Text = $"{Math.Truncate((imageHeight * imageWidth * 4.0f + 16) / 1024.0f * 100) / 100} KB";
+            }
+            else if (intbitDepth == 24)
+            {
+                fileSize.Text = $"{Math.Truncate((imageHeight * imageWidth * 3.0f + 16) / 1024.0f * 100) / 100} KB";
+            }
         }
 
         private void SaveConfig_Load(object sender, EventArgs e)
